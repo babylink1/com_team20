@@ -1,1 +1,5 @@
-# com_team20
+# culturalCommunity
+
+```
+example https://www.socialinsider.io/blog/
+```
