@@ -4,7 +4,8 @@
   overflow: auto;
   .main-container {
     height: calc(100% - 61px);
-    max-width: 1600px;
+    // max-width: 1600px;
     margin: 0 auto;
+    overflow: auto;
   }
 }

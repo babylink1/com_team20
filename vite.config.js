@@ -4,9 +4,15 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": resolve("./src"),
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("tinymce/skins/content/default/content.min.css")) {
+            return "content-css"; // 为 content.min.css 文件创建一个单独的 chunk
+          }
+        },
+      },
     },
   },
   css: {
@@ -14,6 +20,12 @@ export default defineConfig({
       scss: {},
     },
   },
+  resolve: {
+    alias: {
+      "@": resolve("./src"),
+    },
+  },
+
   plugins: [react()],
   server: {
     open: true,

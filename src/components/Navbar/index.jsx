@@ -17,6 +17,7 @@ import {
   InputAdornment,
   IconButton,
   Divider,
+  Tooltip,
 } from "@mui/material";
 import {
   MoreHoriz,
@@ -27,6 +28,7 @@ import {
   AccountBalance as AccountBalanceIcon,
   SearchOutlined as SearchOutlinedIcon,
   HighlightOffOutlined as HighlightOffOutlinedIcon,
+  AddHomeWorkOutlined as AddHomeWorkOutlinedIcon,
 } from "@mui/icons-material";
 import BaseDialog from "@/components/dialogCommon/index.jsx";
 
@@ -67,10 +69,19 @@ const Navbar = () => {
           <input className="input" placeholder="search article" />
           <HighlightOffOutlinedIcon />
         </div>
+
+        {/* operation area */}
         <div className="right">
-          <IconButton onClick={() => navigate("/home/createPost")}>
-            <AddIcon />
-          </IconButton>
+          <Tooltip title="create community">
+            <IconButton onClick={() => navigate("/home/createCommunity")}>
+              <AddHomeWorkOutlinedIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="creat post">
+            <IconButton onClick={() => navigate("/home/createPost")}>
+              <AddIcon />
+            </IconButton>
+          </Tooltip>
           &nbsp;
           <Button variant="contained" color="warning">
             Log In
