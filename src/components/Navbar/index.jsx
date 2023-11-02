@@ -18,6 +18,7 @@ import {
   IconButton,
   Divider,
   Tooltip,
+  Badge,
 } from "@mui/material";
 import {
   MoreHoriz,
@@ -29,6 +30,7 @@ import {
   SearchOutlined as SearchOutlinedIcon,
   HighlightOffOutlined as HighlightOffOutlinedIcon,
   AddHomeWorkOutlined as AddHomeWorkOutlinedIcon,
+  EmojiEventsOutlined as EmojiEventsOutlinedIcon,
 } from "@mui/icons-material";
 import BaseDialog from "@/components/dialogCommon/index.jsx";
 
@@ -72,6 +74,7 @@ const Navbar = () => {
 
         {/* operation area */}
         <div className="right">
+          {/* short icons */}
           <Tooltip title="create community">
             <IconButton onClick={() => navigate("/home/createCommunity")}>
               <AddHomeWorkOutlinedIcon />
@@ -82,11 +85,19 @@ const Navbar = () => {
               <AddIcon />
             </IconButton>
           </Tooltip>
+          <Tooltip title="event list">
+            <IconButton onClick={() => navigate("/home/eventList")}>
+              <Badge badgeContent={2} color="error">
+                <EmojiEventsOutlinedIcon />
+              </Badge>
+            </IconButton>
+          </Tooltip>
           &nbsp;
           <Button variant="contained" color="warning">
             Log In
           </Button>
           &nbsp;
+          {/* more */}
           <div className="more-icon">
             <MoreHoriz onClick={btnMore} />
             <Popover

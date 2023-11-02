@@ -1,0 +1,12 @@
+.events-selection-wrap {
+  width: 100%;
+  .selection-top {
+    display: flex;
+    justify-content: space-between;
+    .left,
+    .right {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
